@@ -68,8 +68,13 @@ RUN { \
 RUN curl --silent --show-error https://getcomposer.org/installer | php && \
     mv composer.phar /usr/local/bin/composer
 
+RUN curl --silent -Lss  https://symfony.com/installer -o ./symfony ;\
+	mv symfony /usr/local/bin/symfony ; \
+	chmod a+x /usr/local/bin/symfony
+
 
 WORKDIR /var/www/donpadre
 
 EXPOSE 8000
 
+CMD ["symfony server:start --allow-http -d"]
