@@ -77,4 +77,4 @@ WORKDIR /var/www/donpadre
 
 EXPOSE 8000
 
-CMD ["symfony server:start --allow-http -d"]
+CMD ["symfony","server:start", "--allow-http -d"]
