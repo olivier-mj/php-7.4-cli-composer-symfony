@@ -68,7 +68,8 @@ RUN { \
 RUN curl --silent --show-error https://getcomposer.org/installer | php && \
     mv composer.phar /usr/local/bin/composer
 
-RUN curl --silent --show-error -LsS https://symfony.com/installer -o /usr/local/bin/symfony && \
+
+RUN curl -fsSL https://github.com/symfony/cli/releases/download/v4.20.3/symfony_linux_amd64.gz | tar xvz -C /usr/local/bin/symfony && \
     chmod a+x /usr/local/bin/symfony
 
 WORKDIR /var/www/donpadre
