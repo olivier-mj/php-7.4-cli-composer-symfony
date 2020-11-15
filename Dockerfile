@@ -1,4 +1,5 @@
 FROM php:7.4-cli
+LABEL maintainer "contact@oliviermariejoseph.fr"
 
 ENV EXT_APCU_VERSION=5.1.19
 
